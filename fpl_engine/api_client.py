@@ -57,11 +57,18 @@ def fetch_player_history(player_id: int):
 
 def load_bootstrap():
     with open(RAW_DIR / "bootstrap.json") as f:
-        return json.load(f)
+        data = json.load(f)
+        print(f"Loaded {len(data["elements"])} players")
+        print(f"Loaded {len(data["teams"])} teams")
+        return data
+
+    
 
 def load_fixtures():
     with open(RAW_DIR / "fixtures.json") as f:
-        return json.load(f)
+        data = json.load(f)
+        print(f"Loaded {len(data)} fixtures")
+        return data
 
 def load_player_history(player_id: int):
     with open(RAW_DIR / "players" / f"{player_id}.json") as f:
