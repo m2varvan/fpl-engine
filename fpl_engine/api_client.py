@@ -49,7 +49,7 @@ def fetch_player_history(player_id: int):
     Per-player historical stats broken down by gameweek
     This is where actual points, minutes, xG etc. live
     """
-    url=f"{BASE_URL}/element-summary/{player_id}"
+    url=f"{BASE_URL}/element-summary/{player_id}/"
     response = requests.get(url)
     response.raise_for_status()
     data = response.json()
