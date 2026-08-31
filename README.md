@@ -5,5 +5,3 @@ My goal is to build an FPL (Fantasy Premier League) Optimization Engine. The mod
 
 I want to account for as many official rules as possible (budget constraints, 15-player squad structure, free transfers, rolling transfers, price changes, and chips like Wildcard, Free Hit, Triple Captain, and Bench Boost).
 
-
-

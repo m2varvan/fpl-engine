@@ -37,27 +37,34 @@ def build_raw_modelling_feature_store():
 
         for row in history:
             all_rows.append({
+                # Context
                 "player_id": row["element"],
                 "gameweek": row["round"],
-                "total_points": row["total_points"],
-                "minutes": row["minutes"],
                 "fixture_id": row["fixture"],
                 "was_home": row["was_home"],
                 "opponent_team": row["opponent_team"],
+                # Playing time
                 "starts": row["starts"],
+                "minutes": row["minutes"],
+                # Market
                 "price": row["value"] / 10,
                 "selected": row["selected"],
                 "transfers_in": row["transfers_in"],
                 "transfers_out": row["transfers_out"],
-                "ict_index": float(row["ict_index"]),
-                "bps": row["bps"],
+                # Outcome
+                "total_points": row["total_points"],
                 "bonus": row["bonus"],
+                "bps": row["bps"],
+                # Attacking stats
                 "goals_scored": row["goals_scored"],
                 "assists": row["assists"],
+                "ict_index": float(row["ict_index"]),
+                # Defensive stats
                 "clean_sheets": row["clean_sheets"],
                 "goals_conceded": row["goals_conceded"],
                 "saves": row["saves"],
                 "defensive_contribution": row["defensive_contribution"],
+                # Expected stats
                 "expected_goals": float(row["expected_goals"]),
                 "expected_assists": float(row["expected_assists"]),
                 "expected_goal_involvements": float(row["expected_goal_involvements"]),
